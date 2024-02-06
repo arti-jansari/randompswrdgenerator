@@ -3,26 +3,34 @@ import './App.css';
 import React, {useState} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.min.js';
+ import Background from './image/image1.jpg'
+
 const containerStyle = {
-  maxWidth: "400px",
-  margin: "1rem",
+  maxWidth: "500px",
+  marginBottom: "10px",
   padding: "20px",
   border: "1px solid #ccc",
   borderRadius: "8px",
   boxShadow: "0px 0px 10px 0px grey",
-  backgroundColor:"whitesmoke",
+  backgroundColor:"#1a1818e6",
+  color:"gray",
+ 
 };
 
 const inputContainerStyle = {
-  display: "flex",
-  alignItems: "center",
-  marginBottom: "10px",
-};
+   marginBottom: "10px",
+   marginTop:"30px",
+ };
 const mainContainer = {
   display:"flex",
   justifyContent :"center",
   alignItems:"center",
   height:"100vh",
+  backgroundImage: `url(${Background})`,
+  backgroundRepeat: "no-repeat", 
+  backgroundSize: "cover",
+  width: "100%",
+  height: "100vh",
 
 
 }
@@ -34,6 +42,8 @@ const inputStyle = {
   padding: "5px",
   border: "1px solid #ccc",
   borderRadius: "3px",
+  width: "51%",
+  marginLeft:"10px"
 };
 
 const checkboxContainerStyle = {
@@ -44,7 +54,7 @@ const checkboxContainerStyle = {
 
 const buttonStyle = {
   padding: "10px 15px",
-  backgroundColor: "#007bff",
+  backgroundColor: "cadetblue",
   color: "#fff",
   border: "none",
   borderRadius: "5px",
@@ -93,7 +103,7 @@ function App() {
 return (
   <div style={mainContainer}>
 <div style={containerStyle}>     
-      <h1 style={{ textAlign: "center" ,color:"cadetblue"}}>Random Password Generator</h1>
+      <h1 style={{ textAlign: "center" ,color:"cadetblue"}}>Password Generator</h1>
     
       <div style={inputContainerStyle}>
           <label style={labelStyle}>Password Length:</label>
@@ -149,7 +159,7 @@ return (
              
         
       </div>
-      <div className='d-flex justify-content-center mt-5'>
+      <div className='d-flex justify-content-center my-5'>
       <button style={buttonStyle} onClick={generatePassword}>
           Generate Password
       </button>
